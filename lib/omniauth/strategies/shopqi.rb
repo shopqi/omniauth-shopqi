@@ -8,8 +8,8 @@ module OmniAuth
       DEFAULT_SCOPE = 'read_products'
 
       option :client_options, {
-        :authorize_url => '/admin/oauth/authorize',
-        :token_url => '/admin/oauth/access_token'
+        :authorize_url => '/oauth/authorize',
+        :token_url => '/oauth/token'
       }
 
       option :callback_url
@@ -23,6 +23,15 @@ module OmniAuth
       def callback_url
         options.callback_url || super
       end
+
+      extra do
+        {raw_info: raw_info}
+      end
+
+      def raw_info
+        @raw_info ||= access_token.get('/api/shop').parsed
+      end
+
     end
   end
 end
