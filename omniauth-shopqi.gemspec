@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/omniauth-shopqi.rb",
     "lib/omniauth-shopqi/version.rb",
     "lib/omniauth/strategies/shopqi.rb",
+    "omniauth-shopqi.gemspec",
     "spec/omniauth-shopqi_spec.rb",
     "spec/spec_helper.rb"
   ]
